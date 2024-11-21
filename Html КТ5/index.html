@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: end;
+            background-color: rgb(156, 255, 250);
+        }
+        .car{
+            width: 200px;
+            height: 75px;
+            background-color: pink;
+            position: relative;
+            animation: drive 5s forwards;
+        }
+        .car::before,
+        .car::after{
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            bottom: -20px;
+        }
+        .car::before{
+            left: 30px;
+        }
+        .car::after{
+            right: 30px;
+        }
+        .sun{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 213, 0);
+            border-radius: 50%;
+        }
+        @keyframes drive {
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(calc(100vw - 250px));
+            }
+        }
+    </style>
+    <div class="car"></div>
+    <div class="sun"></div>
+</body>
+</html>
